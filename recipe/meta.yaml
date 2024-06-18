@@ -1,17 +1,17 @@
 {% set name = "sklearn-crfsuite" %}
-{% set version = "0.3.6" %}
+{% set version = "0.5.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 2f59aad3055e01a778a79a6352891cac04788e8b52688aa5bc8b11be7717861e
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz"
+  sha256: 136cb941ff5f7ce62a2c378988d1123ac1037241e73999ae404509a2135078e9
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
